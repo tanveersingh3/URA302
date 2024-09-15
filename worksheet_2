@@ -1,0 +1,154 @@
+# Worksheet 2
+# Q1
+L = [11, 12, 13, 14]
+
+# (i) to add 50 and 60 to L
+L.append(50)
+L.append(60)
+print("After adding 50 and 60:", L)
+
+# (ii) to remove 11 and 13 from L
+L.remove(11)
+L.remove(13)
+print("After removing 11 and 13:", L)
+
+# (iii) to sort L in ascending orde
+L.sort()
+print("Sorted in ascending order:", L)
+
+# (iv) to sort L in descending order
+L.sort(reverse=True)
+print("Sorted in descending order:", L)
+
+# (v) to search for 13 in L
+if 13 in L:
+    print("13 is in the list.")
+else:
+    print("13 is not in the list.")
+
+# (vi) to count the number of elements present in L
+print("Number of elements in L:", len(L))
+
+# (vii)to sum all the elements in L
+print("Sum of all elements in L:", sum(L))
+
+# (viii)to sum all ODD numbers in L
+odd_sum = sum([x for x in L if x % 2 != 0])
+print("Sum of all odd numbers in L:", odd_sum)
+
+# (ix)to sum all EVEN numbers in L
+even_sum = sum([x for x in L if x % 2 == 0])
+print("Sum of all even numbers in L:", even_sum)
+
+# (x) to sum all PRIME numbers in L
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+prime_sum = sum([x for x in L if is_prime(x)])
+print("Sum of all prime numbers in L:", prime_sum)
+
+# (xi) to clear all the elements in L
+L.clear()
+print("List after clearing all elements:", L)
+
+# (xii) to delete L
+del L
+
+# Q2
+def custom_sum(lst):
+    total = 0
+    for num in lst:
+        total += num
+    return total
+
+lst = [1, 2, 3, 4, 5]
+print("Sum of the list:", custom_sum(lst))
+
+# Q3
+def custom_product(lst):
+    result = 1
+    for num in lst:
+        result *= num
+    return result
+
+lst = [1, 2, 3, 4, 5]
+print("Product of the list:", custom_product(lst))
+
+# Q4
+array = [[['*' for _ in range(6)] for _ in range(4)] for _ in range(3)]
+print("3D Array:", array)
+
+# Q5
+D = {1: 5.6, 2: 7.8, 3: 6.6, 4: 8.7, 5: 7.7}
+
+D[8] = 8.8
+print("After adding key 8:", D)
+D.pop(2)
+print("After removing key 2:", D)
+print("Is key 6 present?", 6 in D)
+print("Number of elements in D:", len(D))
+print("Sum of all values in D:", sum(D.values()))
+D[3] = 7.1
+print("After updating key 3:", D)
+D.clear()
+print("After clearing D:", D)
+
+# Q6
+S1 = {10, 20, 30, 40, 50, 60}
+S2 = {40, 50, 60, 70, 80, 90}
+
+S1.update([55, 66])
+print("After adding 55 and 66 to S1:", S1)
+S1.discard(10)
+S1.discard(30)
+print("After removing 10 and 30 from S1:", S1)
+print("Is 40 present in S1?", 40 in S1)
+print("Union of S1 and S2:", S1.union(S2))
+print("Intersection of S1 and S2:", S1.intersection(S2))
+print("Difference S1 - S2:", S1.difference(S2))
+
+# Q7
+import random
+import string
+random_strings = [''.join(random.choices(string.ascii_letters, k=random.randint(6, 8))) for _ in range(100)]
+print("Random Strings:", random_strings)
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+primes = [x for x in range(600, 801) if is_prime(x)]
+print("Prime numbers between 600 and 800:", primes)
+for i in range(100, 1001):
+    if i % 7 == 0 and i % 9 == 0:
+        print(i, end=" ")
+
+# Q9
+numbers = [10, 15, 22, 35, 40, 57, 70]
+for num in numbers:
+    if num % 5 == 0:
+        print(num, end=" ")
+
+# Q10
+def is_even(n):
+    return n % 2 == 0
+number = 10
+print(f"The number {number} is {'even' if is_even(number) else 'odd'}")
+
+# Q11
+string = "Emma is a good girl. Emma loves to code. Emma is smart."
+count = string.count("Emma")
+print(f"The substring 'Emma' appears {count} times.")
+
+# Q12
+list1 = [1, 2, 3, 4, 5]
+list2 = [10, 15, 20, 25, 30]
+new_list = [x for x in list1 if x % 2 != 0] + [x for x in list2 if x % 2 == 0]
+print("New list:", new_list)

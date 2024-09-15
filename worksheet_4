@@ -1,0 +1,106 @@
+# Worksheet 4
+# Q1
+import numpy as np
+array_1d = np.arange(5, 26)
+array_2d = np.random.randint(10, 51, size=(3, 4))
+print("1D array:\n", array_1d)
+print("2D array:\n", array_2d)
+
+# Q2
+shape_1d = array_1d.shape
+size_1d = array_1d.size
+dtype_1d = array_1d.dtype
+print("1D array shape:", shape_1d)
+print("1D array size:", size_1d)
+print("1D array data type:", dtype_1d)
+shape_2d = array_2d.shape
+size_2d = array_2d.size
+dtype_2d = array_2d.dtype
+print("2D array shape:", shape_2d)
+print("2D array size:", size_2d)
+print("2D array data type:", dtype_2d)
+
+# Q3
+array1 = np.array([2, 4, 6, 8, 10])
+array2 = np.array([1, 3, 5, 7, 9])
+
+addition = array1 + array2
+subtraction = array1 - array2
+multiplication = array1 * array2
+division = array1 / array2
+
+print("Addition:\n", addition)
+print("Subtraction:\n", subtraction)
+print("Element-wise multiplication:\n", multiplication)
+print("Element-wise division:\n", division)
+
+# Q4
+array_broadcast = np.arange(1, 10).reshape(3, 3)
+broadcast_result = array_broadcast * 5
+print("2D array:\n", array_broadcast)
+print("After broadcasting with scalar 5:\n", broadcast_result)
+
+# Q5
+array_2d = np.arange(10, 26).reshape(4, 4)
+
+second_row = array_2d[1, :]
+last_column = array_2d[:, -1]
+
+array_2d[0, :] = 0
+
+print("Original 2D array:\n", array_2d)
+print("Second row:\n", second_row)
+print("Last column:\n", last_column)
+print("Modified 2D array:\n", array_2d)
+
+# Q6
+array_1d = np.random.randint(20, 41, size=10)
+
+greater_than_30 = array_1d[array_1d > 30]
+
+print("1D array:\n", array_1d)
+print("Elements greater than 30:\n", greater_than_30)
+
+# Q7
+array_1d_reshaped = np.arange(11, 23)
+
+reshaped_array = array_1d_reshaped.reshape(3, 4)
+
+print("1D array:\n", array_1d_reshaped)
+print("Reshaped array (3x4):\n", reshaped_array)
+
+# Q8
+matrix_A = np.array([[1, 2], [3, 4]])
+matrix_B = np.array([[5, 6], [7, 8]])
+
+matrix_multiplication = np.dot(matrix_A, matrix_B)
+transpose_A = np.transpose(matrix_A)
+
+print("Matrix A:\n", matrix_A)
+print("Matrix B:\n", matrix_B)
+print("Matrix multiplication result:\n", matrix_multiplication)
+print("Transpose of Matrix A:\n", transpose_A)
+
+# Q9
+array_1d_stat = np.random.randint(10, 61, size=15)
+
+mean = np.mean(array_1d_stat)
+median = np.median(array_1d_stat)
+std_deviation = np.std(array_1d_stat)
+
+print("1D array:\n", array_1d_stat)
+print("Mean:", mean)
+print("Median:", median)
+print("Standard deviation:", std_deviation)
+
+# Q10
+matrix_C = np.array([[2, 1, 3], [0, 5, 6], [7, 8, 9]])
+
+determinant_C = np.linalg.det(matrix_C)
+inverse_C = np.linalg.inv(matrix_C) if np.linalg.det(matrix_C) != 0 else "Matrix is singular, no inverse"
+eigenvalues_C, _ = np.linalg.eig(matrix_C)
+
+print("Matrix C:\n", matrix_C)
+print("Determinant of Matrix C:", determinant_C)
+print("Inverse of Matrix C:\n", inverse_C)
+print("Eigenvalues of Matrix C:", eigenvalues_C)
